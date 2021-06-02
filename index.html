@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML Assignment</title>
+    </head>
+    <style>
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2ea;
+            padding: 20px;
+        }
+        body label {
+                width: 25%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+        }
+        body textarea {
+                width: 25%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+        }
+        body input[type=text] {
+                width: 25%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+        }
+        input[type=email], select {
+                width: 25%;
+                padding: 5px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+        }
+        input[type=number], select {
+                width: 25%;
+                padding: 5px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+        }
+        input[type=date], select {
+                width: 25%;
+                padding: 10px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+        }
+        body .item .checkbox-label {
+            width: unset;
+        }
+        .btn{
+            background-color: aqua;
+            display: inline-block;
+            font-weight: 400;
+            line-height: 1.5;
+            text-align: center;
+            text-decoration: none;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function myFunction() {
+            document.getElementById("myForm").reset();
+        }
+    </script>
+    <body>
+        <!--Forms-->
+        <div class="container">
+        <form action="process.php" method="POST" id="myForm">
+            <div>
+                <label>Product Name</label>
+                <input type="text" name="productName" placeholder="Enter Product name" required>
+            </div>
+            <br>
+            <div>
+                <label>Product Description</label>
+                <textarea name="productDescription"></textarea>
+            </div>
+            <br>
+            <div>
+                <label>Support Email</label>
+                <input type="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$">
+            </div>
+            <br>
+            <div>
+                <label>Seller Contact</label>
+                <input type="number" name="contact" value="9755418209" disabled>
+            </div>
+            <br>
+            <div>
+                <label>Launch Date</label>
+                <input type="date" name="launchDate">
+            </div>
+            <div class="item">
+                <label>Product Colours</label>
+                <input type="checkbox" name="red" value="Red" id="red_1">
+                <label for="red_1" class="checkbox-label">Red</label>
+                <input type="checkbox" name="green" value="Green" id="green_1">
+                <label for="green_1" class="checkbox-label">Green</label>
+                <input type="checkbox" name="blue" value="BoBlueat" id="blue_1">
+                <label for="blue_1" class="checkbox-label">Blue</label>
+            </div>
+            <br>
+            <div>
+                <label>Product Size</label>
+                <select name="size">
+                    <option value="small">SM</option>
+                    <option value="medium">MD</option>
+                    <option value="large">LG</option>
+                    <option value="xtra">XL</option>
+
+                </select>
+            </div>
+            <br>
+        <label>Product Image</label>
+            <input type="file" id="img" name="img" accept="image/png, image/gif, image/jpeg">
+        </a> 
+            <div class="item">
+                <label>In-Stock</label>
+                  <input type="radio" id="yes" name="stock" value="yes">
+                    <label class="checkbox-label" for="yes">Yes</label>
+                    <input type="radio" id="no"  name="stock" value="no">
+                    <label class="checkbox-label" for="no">No</label>
+            </div>
+        <br>
+            <input class="btn" type="submit" name="submit" value="Submit">
+            <input type="button" name="clear" value="Clear" onclick="myFunction()">
+        </form>
+    </div>
+        <br>
+    </body>
+</html>   
