@@ -3,20 +3,14 @@
 <head>
   <title>Product</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 
 </head>
-<script>
-  $(document).ready(function(){
-    $("#myInput").on("keyup", function() {
-      var value = $(this).val().toLowerCase();
-      $("#myList h5").filter(function() {
-        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-      });
-    });
-  });
-  </script>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
@@ -47,14 +41,50 @@
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
               </li> -->
             </ul>
+
             <form class="d-flex">
-              <input id="myInput" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+              <input list="browsers" class="form-control mr-sm-2" name="browser" id="browser"  placeholder="Search" aria-label="Search">
+              <datalist id="browsers">
+                  <option value="Cycle">
+                  <option value="Tonner Tube">
+                  <option value="Alliance 2 Sackpack">
+                  <option value="Future Icon Sacoche">
+                </datalist>
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+
+
           </div>
         </div>
       </nav>
-    <div class="row" id="myList">
+      <div class="container-sm">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="./assets/images/hori1.jpg" class="d-block w-100" height="300px" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="./assets/images/hori2.jpg" class="d-block w-100" height="300px" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="./assets/images/hori4.jpg" class="d-block w-100" height="300px" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="./assets/images/hori5.png" class="d-block w-100" height="300px" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+
+    <div class="row g-0">
         <div class="col-sm-3">
           <div class="card">
             <img class="card-img-top" src="./assets/images/tonner tube.jpg" alt="Card image cap">
@@ -77,6 +107,20 @@
             </div>
           </div>
         </div>
+
+        <div class="col-sm-3">
+          <div class="card">
+            <img class="card-img-top" src="./assets/images/b1.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Basket Ball</h5>
+              <p class="card-text">This resistance pull exerciser provides a total body workout whether you are at home or on the road.</p>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                View
+              </button>
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <!-- Modal -->
